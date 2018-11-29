@@ -15,7 +15,7 @@
         state: started
         enabled: True
 
-    - name: write MAC address to webpage
+    - name: write various information to webpage
       template:
         dest: /var/www/html/index.html
         src: index.html.j2
