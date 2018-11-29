@@ -13,6 +13,7 @@
       systemd:
         name: httpd.service
         state: started
+        enabled: True
 
     - name: write MAC address to webpage
       template:
