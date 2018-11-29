@@ -1,4 +1,8 @@
 ---
+
 - hosts: all
+  sudo: yes
   tasks:
-    - action: ping
+    - selinux:
+        state: enforcing
+        policy: targeted
