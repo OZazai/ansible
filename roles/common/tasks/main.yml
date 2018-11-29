@@ -1,0 +1,4 @@
+- name: enforce SELinux policy 'targeted'
+  selinux:
+    state: enforcing
+    policy: targeted

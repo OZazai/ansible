@@ -1,0 +1,6 @@
+- name: apply common configuration
+  hosts: all
+  become: yes
+  become_user: root
+  roles:
+    - common

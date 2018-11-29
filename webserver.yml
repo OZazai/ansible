@@ -1,0 +1,6 @@
+- name: install webserver
+  hosts: all
+  become: True
+  become_user: root
+  roles:
+    - webserver
