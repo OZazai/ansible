@@ -1,0 +1,21 @@
+- name: update packages
+  hosts: all
+  become: yes
+  become_user: root
+  gather_facts: no
+  tasks:
+
+    - name: apply package updates
+      yum:
+        name: '*'
+        state: latest
+        update_cache: yes
+
+    - name: check if reboot needed
+      shell: needs-restarting -r
+      register: rebootneeded
+      changed_when: False
+      failed_when: False
+
+- import_playbook: reboot.yml
+  when: rebootneeded.rc == 1
